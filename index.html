@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ravi Prasath | Full-Stack Developer & Data Science Student</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Syne:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body class="dark-theme">
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-text">
+        <span class="mono">Initializing</span>
+        <span class="loader-dots"><span>.</span><span>.</span><span>.</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="cursor-trail-container"></div>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Mouse Glow -->
+  <div id="mouse-glow"></div>
+
+  <!-- Animated Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">RP</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button type="button" id="theme-toggle" title="Toggle Theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <button type="button" class="hamburger" id="hamburger" title="Toggle navigation menu" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero-section">
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-tag mono reveal-up" data-delay="0">
+          <span class="tag-dot"></span>Available for Opportunities
+        </div>
+        <h1 class="hero-title reveal-up" data-delay="100">
+          Hi, I'm<br />
+          <span class="gradient-text">Ravi Prasath</span>
+        </h1>
+        <div class="hero-subtitle reveal-up" data-delay="200">
+          <span class="mono">Aspiring </span>
+          <span class="typing-wrapper">
+            <span id="typing-text" class="gradient-text-alt"></span>
+            <span class="cursor-blink">|</span>
+          </span>
+        </div>
+        <p class="hero-desc reveal-up" data-delay="300">
+          Crafting immersive digital experiences at the intersection of
+          <span class="hl">Full-Stack Development</span> and
+          <span class="hl">Data Science</span>. Transforming ideas into elegant, data-driven solutions.
+        </p>
+        <div class="hero-cta reveal-up" data-delay="400">
+          <a href="#projects" class="btn btn-primary">
+            <span>View Projects</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#" class="btn btn-secondary" download>
+            <i class="fas fa-download"></i>
+            <span>Download Resume</span>
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            <span>Contact Me</span>
+          </a>
+        </div>
+        <div class="hero-socials reveal-up" data-delay="500">
+          <a href="https://github.com/" target="_blank" rel="noopener" class="social-icon" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-icon" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:raviprasath@email.com" class="social-icon" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      <div class="hero-right reveal-up" data-delay="200">
+        <div class="profile-wrapper">
+          <div class="profile-ring ring-1"></div>
+          <div class="profile-ring ring-2"></div>
+          <div class="profile-ring ring-3"></div>
+          <div class="profile-glow"></div>
+          <div class="profile-image">
+            <div class="profile-initials">RP</div>
+          </div>
+          <div class="floating-badge badge-1">
+            <i class="fab fa-python"></i>
+            <span>Python</span>
+          </div>
+          <div class="floating-badge badge-2">
+            <i class="fas fa-database"></i>
+            <span>SQL</span>
+          </div>
+          <div class="floating-badge badge-3">
+            <i class="fab fa-react"></i>
+            <span>Web Dev</span>
+          </div>
+          <div class="floating-badge badge-4">
+            <i class="fas fa-chart-bar"></i>
+            <span>Power BI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span class="mono">Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about-section section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag mono">01. About</span>
+        <h2 class="section-title">Who I <span class="gradient-text">Am</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-left reveal-left">
+          <div class="glass-card about-card">
+            <div class="about-card-header">
+              <div class="card-dot green"></div>
+              <div class="card-dot yellow"></div>
+              <div class="card-dot red"></div>
+              <span class="mono" style="margin-left:12px;font-size:.75rem;opacity:.5">profile.json</span>
+            </div>
+            <div class="about-text">
+              <p>I'm a passionate <span class="hl">Full-Stack Developer</span> and <span class="hl">Data Science Student</span> pursuing B.Sc Information Technology – Data Science at <span class="hl">Rathinam College of Arts and Science</span>.</p>
+              <p>I thrive at the intersection of beautiful user interfaces and powerful data-driven logic. My goal is to build applications that are not just functional but deeply meaningful and insightful.</p>
+              <p>Beyond the screen, I'm a <span class="hl">State Level Athlete</span> — Long Jump & Relay — which reflects my discipline, focus, and competitive spirit in everything I do.</p>
+            </div>
+            <div class="about-info-grid">
+              <div class="info-item">
+                <span class="info-label mono">Degree</span>
+                <span class="info-value">B.Sc IT – Data Science</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label mono">College</span>
+                <span class="info-value">Rathinam College</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label mono">Location</span>
+                <span class="info-value">Coimbatore, Tamil Nadu</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label mono">Focus</span>
+                <span class="info-value">Web Dev & Analytics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-right reveal-right">
+          <!-- Stats Cards -->
+          <div class="stats-grid">
+            <div class="stat-card glass-card">
+              <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+              <div class="stat-number" data-count="6">0</div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-card glass-card">
+              <div class="stat-icon"><i class="fas fa-certificate"></i></div>
+              <div class="stat-number" data-count="4">0</div>
+              <div class="stat-label">Certifications</div>
+            </div>
+            <div class="stat-card glass-card">
+              <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+              <div class="stat-number" data-count="1">0</div>
+              <div class="stat-label">Hackathon Wins</div>
+            </div>
+            <div class="stat-card glass-card">
+              <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+              <div class="stat-number" data-count="10">0</div>
+              <div class="stat-label">Skills Learned</div>
+            </div>
+          </div>
+          <!-- Education Timeline -->
+          <div class="education-timeline">
+            <h3 class="timeline-title">Education Journey</h3>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+              <div class="timeline-content glass-card">
+                <span class="timeline-date mono">2023 – Present</span>
+                <h4>B.Sc IT – Data Science</h4>
+                <p>Rathinam College of Arts and Science, Coimbatore</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line last"></div>
+              <div class="timeline-content glass-card">
+                <span class="timeline-date mono">2021 – 2023</span>
+                <h4>Higher Secondary Education</h4>
+                <p>Computer Science Stream — Distinction</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="skills-section section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag mono">02. Skills</span>
+        <h2 class="section-title">Technical <span class="gradient-text">Arsenal</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-categories">
+        <!-- Frontend -->
+        <div class="skill-category reveal-up" data-delay="0">
+          <div class="category-header">
+            <i class="fas fa-paint-brush"></i>
+            <h3>Frontend</h3>
+          </div>
+          <div class="skill-cards-row">
+            <div class="skill-card glass-card tilt-card">
+              <div class="skill-icon html-icon"><i class="fab fa-html5"></i></div>
+              <div class="skill-name">HTML5</div>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="90"></div></div>
+              <span class="skill-pct mono">90%</span>
+            </div>
+            <div class="skill-card glass-card tilt-card">
+              <div class="skill-icon css-icon"><i class="fab fa-css3-alt"></i></div>
+              <div class="skill-name">CSS3</div>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="85"></div></div>
+              <span class="skill-pct mono">85%</span>
+            </div>
+            <div class="skill-card glass-card tilt-card">
+              <div class="skill-icon js-icon"><i class="fab fa-js"></i></div>
+              <div class="skill-name">JavaScript</div>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="75"></div></div>
+              <span class="skill-pct mono">75%</span>
+            </div>
+          </div>
+        </div>
+        <!-- Programming -->
+        <div class="skill-category reveal-up" data-delay="100">
+          <div class="category-header">
+            <i class="fas fa-terminal"></i>
+            <h3>Programming</h3>
+          </div>
+          <div class="skill-cards-row">
+            <div class="skill-card glass-card tilt-card">
+              <div class="skill-icon py-icon"><i class="fab fa-python"></i></div>
+              <div class="skill-name">Python</div>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="80"></div></div>
+              <span class="skill-pct mono">80%</span>
+            </div>
+            <div class="skill-card glass-card tilt-card">
+              <div class="skill-icon sql-icon"><i class="fas fa-database"></i></div>
+              <div class="skill-name">SQL</div>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="78"></div></div>
+              <span class="skill-pct mono">78%</span>
+            </div>
+          </div>
+        </div>
+        <!-- Data Tools -->
+        <div class="skill-category reveal-up" data-delay="200">
+          <div class="category-header">
+            <i class="fas fa-chart-pie"></i>
+            <h3>Data Tools</h3>
+          </div>
+          <div class="skill-cards-row">
+            <div class="skill-card glass-card tilt-card">
+              <div class="skill-icon pbi-icon"><i class="fas fa-chart-bar"></i></div>
+              <div class="skill-name">Power BI</div>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="82"></div></div>
+              <span class="skill-pct mono">82%</span>
+            </div>
+            <div class="skill-card glass-card tilt-card">
+              <div class="skill-icon xl-icon"><i class="fas fa-file-excel"></i></div>
+              <div class="skill-name">Excel</div>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="85"></div></div>
+              <span class="skill-pct mono">85%</span>
+            </div>
+          </div>
+        </div>
+        <!-- Design -->
+        <div class="skill-category reveal-up" data-delay="300">
+          <div class="category-header">
+            <i class="fas fa-vector-square"></i>
+            <h3>Design Tools</h3>
+          </div>
+          <div class="skill-cards-row">
+            <div class="skill-card glass-card tilt-card">
+              <div class="skill-icon fig-icon"><i class="fab fa-figma"></i></div>
+              <div class="skill-name">Figma</div>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="70"></div></div>
+              <span class="skill-pct mono">70%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="projects-section section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag mono">03. Projects</span>
+        <h2 class="section-title">Featured <span class="gradient-text">Work</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="filter-tabs reveal-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="python">Python</button>
+        <button class="filter-btn" data-filter="sql">SQL</button>
+        <button class="filter-btn" data-filter="data">Data Analytics</button>
+      </div>
+      <div class="projects-grid" id="projects-grid">
+
+        <div class="project-card glass-card reveal-up" data-category="web" data-delay="0">
+          <div class="project-img">
+            <div class="project-placeholder web-grad">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="overlay-btn ghost"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Calculator App</h3>
+            <p class="project-desc">A sleek, fully functional calculator with advanced operations, keyboard support, and animated UI built with vanilla JavaScript.</p>
+            <div class="project-tags">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card reveal-up" data-category="web" data-delay="100">
+          <div class="project-img">
+            <div class="project-placeholder purple-grad">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="overlay-btn ghost"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Personal Portfolio Website</h3>
+            <p class="project-desc">A futuristic, animated personal portfolio with glassmorphism design, scroll animations, and interactive elements.</p>
+            <div class="project-tags">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card reveal-up" data-category="python" data-delay="200">
+          <div class="project-img">
+            <div class="project-placeholder teal-grad">
+              <i class="fas fa-users-cog"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="overlay-btn ghost"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Student Management System</h3>
+            <p class="project-desc">Full-featured student management system with CRUD operations, search functionality, and data persistence using Python.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">SQLite</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card reveal-up" data-category="data" data-delay="300">
+          <div class="project-img">
+            <div class="project-placeholder orange-grad">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="overlay-btn ghost"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Fitness Life Progress Dashboard</h3>
+            <p class="project-desc">Interactive Power BI dashboard tracking fitness metrics, workout trends, and health progress with real-time visual analytics.</p>
+            <div class="project-tags">
+              <span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">DAX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card reveal-up" data-category="web" data-delay="400">
+          <div class="project-img">
+            <div class="project-placeholder pink-grad">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="overlay-btn ghost"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">E-Commerce Website</h3>
+            <p class="project-desc">Modern e-commerce platform with product filtering, cart management, user authentication, and responsive design.</p>
+            <div class="project-tags">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass-card reveal-up" data-category="sql" data-delay="500">
+          <div class="project-img">
+            <div class="project-placeholder blue-grad">
+              <i class="fas fa-university"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="overlay-btn ghost"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Banking System Database</h3>
+            <p class="project-desc">Comprehensive relational database for banking operations with stored procedures, triggers, and complex SQL queries for transaction management.</p>
+            <div class="project-tags">
+              <span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">ERD</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS SECTION -->
+  <section id="achievements" class="achievements-section section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag mono">04. Achievements</span>
+        <h2 class="section-title">Milestones &amp; <span class="gradient-text">Wins</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="achievements-timeline">
+        <div class="achievement-item reveal-left">
+          <div class="achievement-icon-wrap">
+            <div class="achievement-icon trophy">
+              <i class="fas fa-trophy"></i>
+            </div>
+          </div>
+          <div class="achievement-card glass-card">
+            <div class="achievement-meta">
+              <span class="achievement-tag mono">Hackathon</span>
+              <span class="achievement-year mono">2024</span>
+            </div>
+            <h3>ITECHTURE 1.0 Hackathon Winner</h3>
+            <p>Secured first place at the ITECHTURE 1.0 Hackathon, demonstrating exceptional problem-solving skills, innovative thinking, and rapid prototype development under intense competition.</p>
+            <div class="achievement-highlights">
+              <span><i class="fas fa-check-circle"></i> 1st Place</span>
+              <span><i class="fas fa-check-circle"></i> Innovation Award</span>
+              <span><i class="fas fa-check-circle"></i> Best UI/UX</span>
+            </div>
+          </div>
+        </div>
+        <div class="achievement-item reveal-right">
+          <div class="achievement-icon-wrap">
+            <div class="achievement-icon athlete">
+              <i class="fas fa-running"></i>
+            </div>
+          </div>
+          <div class="achievement-card glass-card">
+            <div class="achievement-meta">
+              <span class="achievement-tag mono">Athletics</span>
+              <span class="achievement-year mono">2022 – Present</span>
+            </div>
+            <h3>State Level Athlete — Long Jump &amp; Relay</h3>
+            <p>Represented at state level in Long Jump and Relay events, earning recognition for outstanding athletic performance. This experience built discipline, teamwork, and a winning mentality that fuels my professional pursuits.</p>
+            <div class="achievement-highlights">
+              <span><i class="fas fa-check-circle"></i> State Level</span>
+              <span><i class="fas fa-check-circle"></i> Long Jump</span>
+              <span><i class="fas fa-check-circle"></i> Relay Race</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section id="certifications" class="certifications-section section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag mono">05. Certifications</span>
+        <h2 class="section-title">Credentials &amp; <span class="gradient-text">Badges</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card glass-card reveal-up" data-delay="0">
+          <div class="cert-icon pbi-cert">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <div class="cert-info">
+            <h3>Power BI</h3>
+            <p>Data Visualization &amp; Reporting</p>
+            <span class="cert-issuer mono">Microsoft</span>
+          </div>
+          <div class="cert-badge"><i class="fas fa-shield-alt"></i></div>
+        </div>
+        <div class="cert-card glass-card reveal-up" data-delay="100">
+          <div class="cert-icon py-cert">
+            <i class="fab fa-python"></i>
+          </div>
+          <div class="cert-info">
+            <h3>Python Programming</h3>
+            <p>Core to Advanced Python Concepts</p>
+            <span class="cert-issuer mono">NPTEL / Coursera</span>
+          </div>
+          <div class="cert-badge"><i class="fas fa-shield-alt"></i></div>
+        </div>
+        <div class="cert-card glass-card reveal-up" data-delay="200">
+          <div class="cert-icon oracle-cert">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <div class="cert-info">
+            <h3>Oracle Cloud Infrastructure</h3>
+            <p>OCI Foundations Associate</p>
+            <span class="cert-issuer mono">Oracle</span>
+          </div>
+          <div class="cert-badge"><i class="fas fa-shield-alt"></i></div>
+        </div>
+        <div class="cert-card glass-card reveal-up" data-delay="300">
+          <div class="cert-icon azure-cert">
+            <i class="fab fa-microsoft"></i>
+          </div>
+          <div class="cert-info">
+            <h3>Microsoft Azure Fundamentals</h3>
+            <p>AZ-900 Certified</p>
+            <span class="cert-issuer mono">Microsoft</span>
+          </div>
+          <div class="cert-badge"><i class="fas fa-shield-alt"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-section section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag mono">06. Contact</span>
+        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-left reveal-left">
+          <div class="glass-card contact-info-card">
+            <h3>Let's Build Something <span class="gradient-text">Amazing</span></h3>
+            <p>I'm open to internships, freelance projects, and collaboration opportunities. If you have an idea or a project in mind, let's connect!</p>
+            <div class="contact-links">
+              <a href="mailto:raviprasath@email.com" class="contact-link">
+                <div class="cl-icon"><i class="fas fa-envelope"></i></div>
+                <div class="cl-text">
+                  <span class="cl-label mono">Email</span>
+                  <span class="cl-value">prasathravi32gemail.com</span>
+                </div>
+              </a>
+              <a href="https://linkedin.com/" target="_blank" class="contact-link">
+                <div class="cl-icon linkedin"><i class="fab fa-linkedin-in"></i></div>
+                <div class="cl-text">
+                  <span class="cl-label mono">LinkedIn</span>
+                  <span class="cl-value">Ravi Prasath RV</span>
+                </div>
+              </a>
+              <a href="https://github.com/" target="_blank" class="contact-link">
+                <div class="cl-icon github"><i class="fab fa-github"></i></div>
+                <div class="cl-text">
+                  <span class="cl-label mono">GitHub</span>
+                  <span class="cl-value">Ravi Prasath RV</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-right reveal-right">
+          <div class="glass-card contact-form-card">
+            <form id="contact-form">
+              <div class="form-group">
+                <input type="text" id="name" required autocomplete="off" />
+                <label for="name">Your Name</label>
+                <div class="form-line"></div>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" required autocomplete="off" />
+                <label for="email">Email Address</label>
+                <div class="form-line"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" id="subject" required autocomplete="off" />
+                <label for="subject">Subject</label>
+                <div class="form-line"></div>
+              </div>
+              <div class="form-group">
+                <textarea id="message" rows="4" required></textarea>
+                <label for="message">Your Message</label>
+                <div class="form-line"></div>
+              </div>
+              <button type="submit" class="btn btn-primary submit-btn" id="submit-btn">
+                <span class="btn-text">Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-glow"></div>
+    <div class="container footer-inner">
+      <div class="footer-quote">
+        <span class="mono">"</span>
+        <span id="footer-quote-text">Code is poetry. Data is the canvas.</span>
+        <span class="mono">"</span>
+      </div>
+      <div class="footer-logo mono">&lt;RP /&gt;</div>
+      <div class="footer-socials">
+        <a href="https://github.com/ravi-0" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/ravi-prasath-rv/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:prasathravi32@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+      </div>
+      <div class="footer-copy mono">© 2026 Ravi Prasath — Designed & Developed with Passion.</div>
+    </div>
+    <a href="#home" id="back-to-top" title="Back to top">
+      <i class="fas fa-chevron-up"></i>
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
